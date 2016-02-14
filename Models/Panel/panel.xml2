@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertyList>
+ <!--<effect>
+    <inherits-from>Aircraft/EchoAirTraveller/Models/Effects/interior/c172p-interior</inherits-from>
+          <object-name>panel</object-name>
+          <object-name>base</object-name>
+          <object-name>switch</object-name>
+  </effect>-->
+<!--Uncatagorized-->
+    <model>
+    <path>Instruments/comp/comp.xml</path>
+    <offsets>
+      <y-m>0.0</y-m>
+      <x-m>0.4</x-m>
+      <z-m>0.4</z-m>
+<pitch-deg>20</pitch-deg>
+    </offsets>
+  </model>
+    <model>
+    <path>Aircraft/EchoAirTraveller/Models/MFD/mfd.xml</path>
+    <offsets>
+      <y-m>0.25</y-m>
+      <x-m>-0.00</x-m>
+      <z-m>-0.0</z-m>
+<pitch-deg>90</pitch-deg>
+<roll-deg>90</roll-deg>
+    </offsets>
+  </model>
+
+  <!-- The "Standart 6" LEFT-->
+    <model>
+    <path>Instruments/asi/asi.xml</path>
+    <offsets>
+      <y-m>-0.4</y-m>
+      <x-m>0.01</x-m>
+      <z-m>0.07</z-m>
+    </offsets>
+  </model>
+      <model>
+    <path>Instruments/ai/ai.xml</path>
+    <offsets>
+      <y-m>-0.3</y-m>
+      <x-m>0.01</x-m>
+      <z-m>0.07</z-m>
+    </offsets>
+  </model>
+    <model>
+    <path>Instruments/alt/alt.xml</path>
+    <offsets>
+      <y-m>-0.2</y-m>
+      <x-m>0.01</x-m>
+      <z-m>0.07</z-m>
+    </offsets>
+  </model>
+    <model>
+    <path>Aircraft/Instruments-3d/tc/tc.xml</path>
+    <offsets>
+      <y-m>-0.4</y-m>
+      <x-m>0.01</x-m>
+      <z-m>-0.05</z-m>
+    </offsets>
+  </model>
+        <model>
+    <path>Aircraft/Instruments-3d/hi/hi.xml</path>
+    <offsets>
+      <y-m>-0.3</y-m>
+      <x-m>0.01</x-m>
+      <z-m>-0.05</z-m>
+    </offsets>
+  </model>
+  <model>
+    <path>Instruments/vsi/vsi.xml</path>
+    <offsets>
+      <y-m>-0.2</y-m>
+      <x-m>0.01</x-m>
+      <z-m>-0.05</z-m>
+    </offsets>
+  </model>
+
+
+   <model>
+    <path>Instruments/fuel/fuel1.xml</path>
+    <offsets>
+      <y-m>-0.03</y-m>
+      <x-m>0.01</x-m>
+      <z-m>-0.14</z-m>
+    </offsets>
+  </model>
+   <model>
+    <path>Instruments/fuel/fuel2.xml</path>
+    <offsets>
+      <y-m>0.0</y-m>
+      <x-m>0.01</x-m>
+      <z-m>-0.14</z-m>
+    </offsets>
+  </model>
+   <model>
+    <path>Instruments/fuel/fuel3.xml</path>
+    <offsets>
+      <y-m>0.03</y-m>
+      <x-m>0.01</x-m>
+      <z-m>-0.14</z-m>
+    </offsets>
+  </model>
+     <model>
+    <path>Aircraft/Instruments-3d/tach/tach.xml</path>
+    <offsets>
+      <y-m>-0.0</y-m>
+      <x-m>0.01</x-m>
+      <z-m>-0.08</z-m>
+    </offsets>
+  </model>
+<!--Communication -->
+      <model>
+    <path>Aircraft/Instruments-3d/kt76a/kt76a.xml</path>
+    <offsets>
+      <y-m>0.05</y-m>
+      <x-m>0.01</x-m>
+      <z-m>0.00</z-m>
+    </offsets>
+  </model>
+      <model>
+    <path>Instruments/kx165/kx165-1.xml</path>
+    <offsets>
+      <y-m>0.05</y-m>
+      <x-m>0.01</x-m>
+      <z-m>0.05</z-m>
+    </offsets>
+  </model>
+<!--Switches-->
+      <model>
+    <path>Instruments/switch/battery.xml</path>
+    <offsets>
+      <y-m>-0.41</y-m>
+      <z-m>-0.132</z-m>
+      <x-m>-0.0045</x-m>
+    </offsets>
+  </model>
+        <model>
+    <path>Instruments/switch/avionics.xml</path>
+    <offsets>
+      <y-m>-0.39</y-m>
+      <z-m>-0.132</z-m>
+      <x-m>-0.0045</x-m>
+    </offsets>
+  </model>
+   <model>
+    <path>Instruments/switch/engmaster.xml</path>
+    <offsets>
+      <y-m>-0.25</y-m>
+      <z-m>-0.132</z-m>
+      <x-m>-0.0045</x-m>
+    </offsets>
+  </model>
+    <model>
+    <path>Instruments/switch/engstart.xml</path>
+    <offsets>
+      <y-m>-0.23</y-m>
+      <z-m>-0.132</z-m>
+      <x-m>-0.0045</x-m>
+    </offsets>
+  </model>
+    <model>
+    <path>Instruments/switch/strobe-lights.xml</path>
+    <offsets>
+      <y-m>-0.36</y-m>
+      <z-m>-0.132</z-m>
+      <x-m>-0.0045</x-m>
+    </offsets>
+  </model>
+      <model>
+    <path>Instruments/switch/landing-lights.xml</path>
+    <offsets>
+      <y-m>-0.32</y-m>
+      <z-m>-0.132</z-m>
+      <x-m>-0.0045</x-m>
+    </offsets>
+  </model>
+     <model>
+    <path>Instruments/switch/nav-lights.xml</path>
+    <offsets>
+      <y-m>-0.34</y-m>
+      <z-m>-0.132</z-m>
+      <x-m>-0.0045</x-m>
+    </offsets>
+  </model>
+   <model>
+    <path>Instruments/switch/instr-lights.xml</path>
+    <offsets>
+      <y-m>-0.30</y-m>
+      <z-m>-0.132</z-m>
+      <x-m>-0.0045</x-m>
+    </offsets>
+  </model>
+
+<!--Text-->
+   <model>
+    <path>Instruments/text/battalt.ac</path>
+    <offsets>
+      <y-m>-0.40</y-m>
+      <z-m>-0.155</z-m>
+      <x-m>-0.004</x-m>
+<heading-deg>180</heading-deg>
+    </offsets>
+  </model>
+   <model>
+    <path>Instruments/text/lights.ac</path>
+    <offsets>
+      <y-m>-0.33</y-m>
+      <z-m>-0.155</z-m>
+      <x-m>-0.004</x-m>
+    </offsets>
+  </model>
+   <model>
+    <path>Instruments/text/engine.ac</path>
+    <offsets>
+      <y-m>-0.24</y-m>
+      <z-m>-0.155</z-m>
+      <x-m>-0.004</x-m>
+    </offsets>
+  </model>
+<!--Flaps lever-->
+   <model>
+    <path>Instruments/flaps/flaps.ac</path>
+    <offsets>
+      <y-m>-0.0</y-m>
+      <z-m>-0.5</z-m>
+      <x-m>0.8</x-m>
+<pitch-deg>20</pitch-deg>
+    </offsets>
+  </model>
+<animation>
+<type>rotate</type>
+<object-name>flapslever</object-name>
+<property>/surface-positions/flap-pos-norm</property>
+<factor>60</factor>
+<axis><y>1</y></axis>
+<center>
+<x-m>0.0</x-m>
+<y-m>0.0</y-m>
+<z-m>0.0</z-m>
+</center>
+</animation>
+<!--Throttle lever-->
+   <model>
+    <path>Instruments/throttle/throttle.ac</path>
+    <offsets>
+      <y-m>-0.0</y-m>
+      <z-m>-0.4</z-m>
+      <x-m>0.5</x-m>
+<pitch-deg>20</pitch-deg>
+    </offsets>
+  </model>
+<animation>
+<type>rotate</type>
+<object-name>throttlelever</object-name>
+<object-name>throttlecylinder</object-name>
+<property>/controls/engines/engine/throttle</property>
+<factor>-60</factor>
+<axis><y>1</y></axis>
+<center>
+<x-m>0.0</x-m>
+<y-m>0.0</y-m>
+<z-m>0.0</z-m>
+</center>
+</animation>
+<!--Checklists-->
+<animation>
+<type>pick</type>
+    <object-name>checklists</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>  
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/model/checklists</property>
+      </binding>
+        <binding>
+          <command>dialog-show</command>
+          <dialog-name>checklist</dialog-name>
+        </binding>
+    </action>
+</animation>
+
+</PropertyList>

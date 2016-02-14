@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertyList>
+<path>mfd.ac</path>
+<animation>
+<name>menu</name>
+<object-name>menuSP</object-name>
+<object-name>menuEN</object-name>
+<object-name>menuCP</object-name>
+<object-name>menuSI</object-name>
+</animation>
+  <animation>
+    <type>material</type>
+    <object-name>MFD</object-name>
+    <object-name>map</object-name>
+    <object-name>menu</object-name>
+    <object-name>startpage</object-name>
+    <object-name>engine</object-name>
+    <object-name>sysinfo</object-name>
+    <object-name>engrunning</object-name>
+    <object-name>engon</object-name>
+    <object-name>engoff</object-name>
+    <condition>
+<and>
+      <property>/controls/electric/battery-switch</property>
+<property>/controls/lighting/instrument-lights</property>
+</and>
+    </condition>
+    <emission>
+      <red>   0.8 </red>
+      <green> 0.8 </green>
+      <blue>  0.8 </blue>
+    </emission>
+  </animation>
+<animation>
+<type>pick</type>
+<object-name>map</object-name>
+ <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+ <binding>
+    <command>property-toggle</command>
+    <property>/instrumentation/mfd/menu</property>
+ </binding>
+</action>
+</animation>
+<animation>
+<type>select</type>
+<object-name>menu</object-name>
+<condition>
+<property>/instrumentation/mfd/menu</property>
+</condition>
+</animation>
+<animation>
+<type>pick</type>
+<object-name>menuSP</object-name>
+ <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+ <binding>
+    <command>property-toggle</command>
+    <property>/instrumentation/mfd/startpage</property>
+ </binding>
+</action>
+</animation>
+<animation>
+<type>select</type>
+<object-name>startpage</object-name>
+<condition>
+<property>/instrumentation/mfd/startpage</property>
+</condition>
+</animation>
+<animation>
+<type>pick</type>
+<object-name>menuSI</object-name>
+ <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+ <binding>
+    <command>property-toggle</command>
+    <property>/instrumentation/mfd/sysinfo</property>
+ </binding>
+</action>
+</animation>
+<animation>
+<type>select</type>
+<object-name>sysinfo</object-name>
+<condition>
+<property>/instrumentation/mfd/sysinfo</property>
+</condition>
+</animation>
+
+<!--Engine informations-->
+<animation>
+<type>pick</type>
+<object-name>menuEN</object-name>
+ <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+ <binding>
+    <command>property-toggle</command>
+    <property>/instrumentation/mfd/enginfo</property>
+ </binding>
+</action>
+</animation>
+<animation>
+<type>select</type>
+<object-name>engstatus</object-name>
+<object-name>engoff</object-name>
+<object-name>engon</object-name>
+<object-name>engrunning</object-name>
+<condition>
+<property>/instrumentation/mfd/enginfo</property>
+</condition>
+</animation>
+<animation>
+<type>select</type>
+<object-name>engon</object-name>
+<condition>
+<property>/controls/engines/engine[0]/magnetos</property>
+</condition>
+</animation>
+<animation>
+<type>select</type>
+<object-name>engrunning</object-name>
+<condition>
+<greater-than>
+<property>/engines/engine[0]/rpm</property>
+<value>100</value>
+</greater-than>
+</condition>
+</animation>
+</PropertyList>
+

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- EchoAir Concept : D-ECHO 2016    
+
+              source          : own design
+
+-->
+
+<airplane mass="630" version="YASIM_VERSION_CURRENT"><!--mass guessed-->
+
+  <!-- Approach configuration -->
+  <approach speed="35" aoa="4" fuel="0.3">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.0"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1"/>
+    <control-setting axis="/controls/flight/flaps" value="1.0"/>
+  </approach>
+
+  <!-- Cruise configuration -->
+  <cruise speed="120" alt="8000" fuel="0.7">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.7"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1"/>
+    <control-setting axis="/controls/flight/flaps" value="0"/>
+  </cruise>
+
+  <cockpit x="1.7521" y="-0.1831" z="-0.4472"/>
+
+  <fuselage ax="2.5749" ay="0" az="-0.2346" bx="0.8815" by="0" bz="0.0104" width="1.1" midpoint="1" taper="0.3"/>
+  <fuselage ax="0.8815" ay="0" az="0.0104" bx="-3.0069" by="0" bz="-0.1075" width="1.1" midpoint="0" taper="0.1"/>
+
+   <wing x="1.76405" y="0" z="-0.62489"
+        chord="1.2"
+        length="3.8"
+        taper="0.9"
+        sweep="5"
+        dihedral="2"
+        incidence="3"
+        camber="0.08">
+        <stall aoa="24" width="6.0" peak="1.5"/>
+        <flap0 start="0.05" end="0.68" lift="1.6" drag="1.5"/>
+        <flap1 start="0.68" end="1.00" lift="1.2" drag="1.1"/>
+
+        <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+        <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/> 
+
+        <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
+        <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+
+        <control-speed control="FLAP0" transition-time="5"/>
+        <control-speed control="FLAP1" transition-time="0.01"/>
+  </wing>
+
+
+  <hstab x="-0.82356" y="0.0" z="0.37739" 
+         chord="0.862"
+         taper="0.6"
+         length="1.6">
+         <stall aoa="18" width="1" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.7" drag="1.1"/>
+       
+         <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+       
+         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+
+  <vstab x="-0.91404" y="0.0" z="0.37739" 
+       chord="0.6"
+       length="0.6" 
+       taper="0.40"
+       sweep="35">
+       <stall aoa="16" width="1" peak="1.5"/>
+       <flap0 start="-0.35" end="1" lift="1.5" drag="1.4"/>
+       
+       <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>       
+       <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
+  </vstab>
+  <!-- Engines   source            : http://www.lycoming.textron.com/engines/series/pdfs/235ci%20Insert.pdf
+                                     http://en.wikipedia.org/wiki/Lycoming_O-235
+
+                 name              : Lycoming O-235-L2A
+                 type              : Four-cylinder, dual magneto, horizontally opposed, four-stroke aircraft engine
+                 Displacement      : 233.3 cu in (3.82 L)
+                 power cruise      : 180 hp at 2700 rpm
+                 weight            : 240 lbs (108.8 kg)
+                 Compression ratio : 6.5:1
+                 Propeller         : McCauley 1A135
+                 Propeller mass    : 5 kg ???? (mass at random)
+
+                 moment: plain stick method (masse*ray^2)/3 = (5 * 0.882^2 ) / 3 =
+                                                              (5 * 0.777924) / 3 =
+       x="-1.0662" y="0.0" z="0.3531"                                                       (   3.88962  ) / 3 = 1.29654
+  -->
+
+  <propeller x="4.1948" y="0" z="-0.17028"
+             mass="100" 
+             moment="1.29654"
+             radius="0.9875"
+             cruise-speed="140" 
+             cruise-rpm="5490"
+             cruise-alt="8000" 
+             cruise-power="110"
+             takeoff-power="120" 
+             takeoff-rpm="5600">
+             <actionpt x="4.51326" y="0" z="-0.17028"/>
+             <piston-engine eng-rpm="5600"
+                            alt="0" 
+                            eng-power="120"
+                            displacement="230"
+                            compression="6.5">
+             <control-input control="PROPFEATHER" axis="/controls/engines/engine[0]/propeller-feather"/>
+             <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle" />
+             <control-input control="STARTER" axis="/controls/engines/engine[0]/starter" />
+             <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos" />
+             <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture" />
+             </piston-engine>
+  </propeller>
+  <gear x="3.8743" y="0" z="-1.246" 
+        compression="0.05" 
+        spring="0.6">
+        <control-input axis="/controls/flight/rudder" control="STEER" src0="-1.0" src1="1.0" dst0="-0.2" dst1="0.2"/>
+   </gear>
+
+  <gear x="1.4969" y="1.7552" z="-1.2733" 
+        compression="0.05" 
+        spring="0.6">
+        <control-input axis="/controls/gear/brake-left" control="BRAKE" split="true"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+  </gear>
+
+  <gear x="1.4969" y="-1.7552" z="-1.2733" 
+        compression="0.05" 
+        spring="0.6">
+        <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+  </gear>
+
+  <!-- Main tank       : 90 l available on 100 l total
+       Left wings tank : 35 l available on 40 l total
+  
+       90 l = 23.76 gal = 198.45 lb 
+       35 l =  9.24 gal =  77.17 lb
+  -->
+  <tank x="1" y="-0.0" z="-0.3202" capacity="100.45" />
+  <tank x="1.2" y="-0.0" z="-0.3202" capacity="100.45" />
+  <tank x="1.4176" y="-0.0" z="-0.3202" capacity="100.45" />
+      
+  <!-- Pilot -->
+  <weight x="2.3" y="-0.1831" z="-0.048" mass-prop="sim/weight[0]/weight-lb"/>
+  <!-- Copilot -->
+  <weight x="2.3" y="0.1831" z="-0.048" mass-prop="sim/weight[1]/weight-lb"/>
+  <!-- Cargo/Baggage -->
+  <weight x="0.2" y="0.0" z="-0.3857" mass-prop="sim/weight[2]/weight-lb"/>
+  <!--Batteries don't get lighter when unloading - fixed here-->
+  <!-- Battery 1-->
+  <weight x="1" y="-0.0" z="-0.3202" mass-prop="consumables/fuel/tank/extra-weight-lbs"/>
+  <!-- Battery 2 -->
+  <weight x="1.2" y="-0.0" z="-0.3202" mass-prop="consumables/fuel/tank[1]/extra-weight-lbs"/>
+  <!-- Battery 3 -->
+  <weight x="1.4176" y="-0.0" z="-0.3202" mass-prop="consumables/fuel/tank[2]/extra-weight-lbs"/>
+
+</airplane>
